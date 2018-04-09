@@ -1,0 +1,4 @@
+*.png
+*.swp
+timelog.log
+!MYGBM_colorbar.png

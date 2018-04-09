@@ -1,0 +1,11 @@
+ZOOM=3
+DATA=data/unders
+REF=data/ref
+WMAX=0.5
+CFLCOMMON="-z$ZOOM -u$WMAX -x2 -y1"
+NEWTON=19
+REDU=1.5
+
+NLINV_OPTS="-a240 -b40 -i${NEWTON} -R${REDU} -S"
+MAPS=2
+COMP_MAPS=4

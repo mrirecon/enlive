@@ -1,0 +1,4 @@
+reco_*/
+data/*
+!data/pat.*
+!data/alias.*

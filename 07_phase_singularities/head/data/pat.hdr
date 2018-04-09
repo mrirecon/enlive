@@ -1,0 +1,8 @@
+# Dimensions
+1 192 192 1 1 1 1 1 1 1 1 1 1 1 1 1 
+# Command
+reshape 7 1 192 192 tmp2 pat 
+# Files
+ >pat <tmp2
+# Creator
+BART v0.3.01-318-g14e5041-dirty

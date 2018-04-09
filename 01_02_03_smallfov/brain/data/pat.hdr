@@ -1,0 +1,8 @@
+# Dimensions
+1 320 256 1 1 1 1 1 1 1 1 1 1 1 1 1 
+# Command
+pattern smallfov_res pat 
+# Files
+ >pat <smallfov_res
+# Creator
+BART v0.4.00-53-g3a56bba
