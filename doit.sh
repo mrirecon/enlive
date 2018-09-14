@@ -57,16 +57,21 @@ ref=$SECONDS
 	./doit.sh
 	cd ../head
 	./doit.sh
+	cd ../heart
+	./doit.sh
 	cd ..
-	./create_HeadvPhantom.sh*
+	./create_Phantom_Head_Heart.sh
 )
 echo "phase singularities: $(( SECONDS - ref ))s" | tee -a $LOG
 
 # low-rank test
 ref=$SECONDS
 (
-	cd 08_lowrank
+	cd 08_09_lowrank
 	cd head_slice1
+	./doit.sh
+	cd ..
+	cd knee
 	./doit.sh
 )
 echo "low-rank: $(( SECONDS - ref ))s" | tee -a $LOG
@@ -74,21 +79,11 @@ echo "low-rank: $(( SECONDS - ref ))s" | tee -a $LOG
 # high unders
 ref=$SECONDS
 (
-	cd 09_high_unders
+	cd 10_high_unders
 	cd head_slice1
 	./doit.sh
 )
 echo "high undersampling: $(( SECONDS - ref ))s" | tee -a $LOG
-
-# low-rank test
-ref=$SECONDS
-(
-	cd 10_noncart
-	cd heart
-	./doit.sh
-)
-echo "noncart: $(( SECONDS - ref ))s" | tee -a $LOG
-
 
 
 # the pngs that come out are unoptimized and therefore quite large

@@ -17,6 +17,41 @@ TMP=tmp
 mkdir ${TMP} || true
 cd $TMP
 
+
+
+#add arrow
+arrow_head="l 0,0  +200,+500  -200,+500  +1500,-500 z"
+
+convert -size 1500x1000 xc:None \
+	        -draw "stroke white fill white scale 1,1 rotate 0
+               path 'M 000,000  $arrow_head' " \
+		               arrow.png
+
+declare -A uARROWS
+uARROWS["22_0.05"]="+218+219 +541+641"
+uARROWS["25_0.01"]="+240+240 +224+286 +175+583"
+uARROWS["25_0.025"]="+230+195 +180+233 +141+390 +100+605"
+uARROWS["25_0.05"]="+241+125 +190+195 +130+295 +100+347 +141+588 +130+673 +460+823"
+
+
+#add offsets
+offsetx=54
+offsety=59
+declare -A ARROWS
+for i in "${!uARROWS[@]}"
+do
+	arrow=""
+	for uarrow in ${uARROWS[$i]}
+	do
+		X=$(echo $uarrow | cut -f2 -d"+")
+		Y=$(echo $uarrow | cut -f3 -d"+")
+		(( X = X - offsetx ))
+		(( Y = Y - offsety ))
+		arrow="$arrow +$X+$Y"
+	done
+	ARROWS[$i]="$arrow"
+done
+
 scale_and_text()
 {
 	IF="$1"
@@ -40,6 +75,17 @@ do
 		else
 			cp ../r_mm_${N}_${NOISE}.png ${N}_${NOISE}.png
 		fi
+
+		arg="${N}_${NOISE}"
+		arrows=${ARROWS[$arg]+"${ARROWS[$arg]}"}
+		if [ ! -z "$arrows" ]
+		then
+			for arrow in ${arrows[@]}
+ 			do	
+				convert ${N}_${NOISE}.png \( ./arrow.png -scale 04\% -geometry "$arrow" -background None -rotate 50 \) -composite ${N}_${NOISE}.png
+			done
+		fi
+
 	done
 
 	convert -interword-spacing 1  -rotate -90 -density ${DENSITY} -pointsize ${FONTSIZE} -font ${FONT} caption:"${NSTRING}" -gravity Center ../r_mm_${NEWTONS[0]}_${NOISE}.png +append -gravity east -splice x0 N_tmp.png

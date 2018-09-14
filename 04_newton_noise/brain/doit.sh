@@ -2,7 +2,6 @@
 set -euo pipefail
 set -B
 
-# ENLIVE reco first:
 # param is output directory
 ./0_reco_enlive.sh reco_ENLIVE
 
