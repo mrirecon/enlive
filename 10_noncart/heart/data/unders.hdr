@@ -1,8 +1,0 @@
-# Dimensions
-1 320 65 30 1 1 1 1 1 1 1 1 1 1 1 1 
-# Command
-transpose 0 1 data/tmp2 data/unders 
-# Files
- >data/unders <data/tmp2
-# Creator
-BART v0.4.01-62-gba56e21

@@ -1,0 +1,8 @@
+# Dimensions
+1 320 256 8 1 1 1 1 1 1 1 1 1 1 1 1 
+# Command
+slice 0 160 data/tmp_fft data/full 
+# Files
+ >data/full <data/tmp_fft
+# Creator
+BART v0.4.03
