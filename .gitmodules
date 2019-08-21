@@ -1,6 +1,6 @@
 [submodule "software/view"]
 	path = software/view
-	url = git@github.com:mrirecon/view.git
+	url = https://github.com/mrirecon/view.git
 [submodule "software/bart"]
 	path = software/bart
-	url = git@github.com:mrirecon/bart.git
+	url = https://github.com/mrirecon/bart.git
