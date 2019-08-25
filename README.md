@@ -2,9 +2,9 @@
 The scripts in this repository reproduce the
 experiments of:
 
-H. Christian M. Holme, Sebastian Rosenzweig, Frank Ong, Robin N. Wilke, Michael Lustig, and Martin Uecker:
-"ENLIVE: An Efficient Nonlinear Method for Calibrationless and Robust Parallel Imaging"
-Preprint: [arXiv:1706.09780][3]
+H. Christian M. Holme, Sebastian Rosenzweig, Frank Ong, Robin N. Wilke, Michael Lustig,  Martin Uecker.
+ENLIVE: An Efficient Nonlinear Method for Calibrationless and Robust Parallel Imaging.
+Scientific Reports 9:3034 (2019)
 
 The reconstruction uses an adapted version of the
 [Berkeley Advanced Reconstruction Toolbox (BART)][1].
@@ -31,4 +31,7 @@ August 30, 2017 - Christian Holme
 
 [1]: https://mrirecon.github.io/bart
 [2]: https://github.com/mrirecon/view
-[3]: https://arxiv.org/abs/1706.09780
+
+
+[![BART](./bart.svg)](https://mrirecon.github.io/bart)
+
