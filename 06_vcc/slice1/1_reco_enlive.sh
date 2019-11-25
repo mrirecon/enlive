@@ -1,10 +1,14 @@
-#!/usr/bin/env bash
-
+#!/bin/bash
 set -euo pipefail
 # brace expand
 set -B
 
-source ../../BART.sh
+
+if [ ! -e $TOOLBOX_PATH/bart ] ; then
+	echo "\$TOOLBOX_PATH is not set correctly!" >&2
+	exit 1
+fi
+export PATH=$TOOLBOX_PATH:$PATH
 
 out=$1
 mkdir -p $out
@@ -28,27 +32,27 @@ MAPS=2
 
 # vcc
 mkdir -p $out/vcc
-$BART nlinv -d$DEBUG -m$MAPS $NLINV_OPTS -U $VCC $out/vcc/r_mmu >$out/vcc/log_r_mmu.log
+bart nlinv -d$DEBUG -m$MAPS $NLINV_OPTS -U $VCC $out/vcc/r_mmu >$out/vcc/log_r_mmu.log
 
-$CFL2PNG $CFLCOMMON $out/vcc/r_mmu{,}
+cfl2png $CFLCOMMON $out/vcc/r_mmu{,}
 
-$BART nlinv -d$DEBUG -m$MAPS $NLINV_OPTS $VCC $out/vcc/r_mm >$out/vcc/log_r_mm.log
-$CFL2PNG $CFLCOMMON $out/vcc/r_mm{,}
+bart nlinv -d$DEBUG -m$MAPS $NLINV_OPTS $VCC $out/vcc/r_mm >$out/vcc/log_r_mm.log
+cfl2png $CFLCOMMON $out/vcc/r_mm{,}
 
-$BART nlinv -d$DEBUG -m1 $NLINV_OPTS $VCC $out/vcc/r_sm >$out/vcc/log_r_sm.log
+bart nlinv -d$DEBUG -m1 $NLINV_OPTS $VCC $out/vcc/r_sm >$out/vcc/log_r_sm.log
 
-$CFL2PNG $CFLCOMMON $out/vcc/r_sm{,}
+cfl2png $CFLCOMMON $out/vcc/r_sm{,}
 
 #partial fourier vcc
 mkdir -p $out/pf_vcc
 # generate VCC PSF
-$BART nlinv -d$DEBUG -m$MAPS $NLINV_OPTS -U -P -p$PSF_PF_VCC $PF_VCC $out/pf_vcc/r_mmu >$out/pf_vcc/log_r_mmu.log
+bart nlinv -d$DEBUG -m$MAPS $NLINV_OPTS -U -P -p$PSF_PF_VCC $PF_VCC $out/pf_vcc/r_mmu >$out/pf_vcc/log_r_mmu.log
 
-$CFL2PNG $CFLCOMMON $out/pf_vcc/r_mmu $out/pf_vcc/r_mmu.png
+cfl2png $CFLCOMMON $out/pf_vcc/r_mmu $out/pf_vcc/r_mmu.png
 
-$BART nlinv -d$DEBUG -m$MAPS $NLINV_OPTS -P -p$PSF_PF_VCC $PF_VCC $out/pf_vcc/r_mm >$out/pf_vcc/log_r_mm.log
-$CFL2PNG $CFLCOMMON $out/pf_vcc/r_mm $out/pf_vcc/r_mm.png
+bart nlinv -d$DEBUG -m$MAPS $NLINV_OPTS -P -p$PSF_PF_VCC $PF_VCC $out/pf_vcc/r_mm >$out/pf_vcc/log_r_mm.log
+cfl2png $CFLCOMMON $out/pf_vcc/r_mm $out/pf_vcc/r_mm.png
 
-$BART nlinv -d$DEBUG -m1 $NLINV_OPTS -P -p$PSF_PF_VCC $PF_VCC $out/pf_vcc/r_sm >$out/pf_vcc/log_r_sm.log
+bart nlinv -d$DEBUG -m1 $NLINV_OPTS -P -p$PSF_PF_VCC $PF_VCC $out/pf_vcc/r_sm >$out/pf_vcc/log_r_sm.log
 
-$CFL2PNG $CFLCOMMON $out/pf_vcc/r_sm $out/pf_vcc/r_sm.png
+cfl2png $CFLCOMMON $out/pf_vcc/r_sm $out/pf_vcc/r_sm.png

@@ -1,7 +1,12 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -euo pipefail
 
-source ../../BART.sh
+if [ ! -e $TOOLBOX_PATH/bart ] ; then
+	echo "\$TOOLBOX_PATH is not set correctly!" >&2
+	exit 1
+fi
+export PATH=$TOOLBOX_PATH:$PATH
+
 source opts.sh
 out=$1
 US=$(GET_US $2)
@@ -20,13 +25,13 @@ export OMP_NUM_THREADS=1
 
 # brace expand
 set -B
-{ time $BART sake -i${SAKE_ITER} -s${SAKE_S} ${DATA}_${US} $out/tmp_sake_ksp_${US}${SUFF}; } \
+{ time bart sake -i${SAKE_ITER} -s${SAKE_S} ${DATA}_${US} $out/tmp_sake_ksp_${US}${SUFF}; } \
 	> $out/log_sake_${US}${SUFF}.log 2> $out/timelog_sake_${US}${SUFF}.log
-$BART fft -u -i 7 $out/tmp_sake_ksp_${US}${SUFF} $out/tmp_sake_${US}${SUFF}
-$BART rss 8 $out/tmp_sake_${US}${SUFF} $out/r_sake_${US}${SUFF}
+bart fft -u -i 7 $out/tmp_sake_ksp_${US}${SUFF} $out/tmp_sake_${US}${SUFF}
+bart rss 8 $out/tmp_sake_${US}${SUFF} $out/r_sake_${US}${SUFF}
 rm $out/tmp_sake{,_ksp}_${US}${SUFF}*
 
 
-$CFL2PNG $CFLCOMMON -u${WMAX} $out/r_sake_${US}${SUFF}{,.png}
+cfl2png $CFLCOMMON -u${WMAX} $out/r_sake_${US}${SUFF}{,.png}
 
 

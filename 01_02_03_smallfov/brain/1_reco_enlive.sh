@@ -1,5 +1,12 @@
-#!/usr/bin/env bash
-source ../../BART.sh
+#!/bin/bash
+set -e
+
+if [ ! -e $TOOLBOX_PATH/bart ] ; then
+	echo "\$TOOLBOX_PATH is not set correctly!" >&2
+	exit 1
+fi
+export PATH=$TOOLBOX_PATH:$PATH
+
 source opts.sh
 
 set -euo pipefail
@@ -14,19 +21,19 @@ set -B
 
 for ((m=1; m<=$COMP_MAPS; m++))
 do
-    $BART nlinv -d$DEBUG -m$m $NLINV_OPTS $DATA $out/r_mm_${m} >$out/log_r_mm_${m} 2>&1
-    $CFL2PNG $CFLCOMMON $out/r_mm_${m}{,.png}
+    bart nlinv -d$DEBUG -m$m $NLINV_OPTS $DATA $out/r_mm_${m} >$out/log_r_mm_${m} 2>&1
+    cfl2png $CFLCOMMON $out/r_mm_${m}{,.png}
 
     if [ "$m" -ne "$COMP_MAPS" ]
     then
-        $BART nlinv -d$DEBUG -m$m -U $NLINV_OPTS $DATA $out/r_mmu_${m} >/dev/null 2>&1
+        bart nlinv -d$DEBUG -m$m -U $NLINV_OPTS $DATA $out/r_mmu_${m} >/dev/null 2>&1
 	if [ "$m" -eq "2" ]
 	then
-		$CFL2PNG $CFLCOMMON $out/r_mmu_${m}{,.png}
+		cfl2png $CFLCOMMON $out/r_mmu_${m}{,.png}
 	fi
     else
-        $BART nlinv -d$DEBUG -m$m -U $NLINV_OPTS $DATA $out/{r,s}_mmu_${m} >/dev/null 2>&1
-        $CFL2PNG $CFLCOMMON $out/r_mmu_${m}{,.png}
-        $CFL2PNG $CFLCOMMON -u0.60 -CG $out/s_mmu{_${m},.png}
+        bart nlinv -d$DEBUG -m$m -U $NLINV_OPTS $DATA $out/{r,s}_mmu_${m} >/dev/null 2>&1
+        cfl2png $CFLCOMMON $out/r_mmu_${m}{,.png}
+        cfl2png $CFLCOMMON -u0.60 -CG $out/s_mmu{_${m},.png}
     fi
 done

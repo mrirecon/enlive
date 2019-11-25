@@ -1,10 +1,16 @@
-#!/usr/bin/env bash
-source ../../BART.sh
-export BART
-export CFL2PNG
+#!/bin/bash
+set -euo pipefail
+
+
+if [ ! -e $TOOLBOX_PATH/bart ] ; then
+	echo "\$TOOLBOX_PATH is not set correctly!" >&2
+	exit 1
+fi
+export PATH=$TOOLBOX_PATH:$PATH
+
+
 source opts.sh
 
-set -euo pipefail
 
 export out=$1
 [ -d $1 ] || mkdir $out
@@ -28,12 +34,12 @@ reco()
 	N=$1
 	NOISE=$2
 	STD=$(echo "$MAX * $NOISE" | bc -l)
-	$BART noise -s$SEED -n$STD data/alias $out/tmp_${N}_${NOISE}
+	bart noise -s$SEED -n$STD data/alias $out/tmp_${N}_${NOISE}
 
-	$BART fmac $out/tmp_${N}_${NOISE} data/pat $out/noisy_${N}_${NOISE}
+	bart fmac $out/tmp_${N}_${NOISE} data/pat $out/noisy_${N}_${NOISE}
 	
-	$BART nlinv -i$N -d$DEBUG $NLINV_OPTS $out/noisy_${N}_${NOISE} $out/r_mm_${N}_${NOISE} > $out/log_r_mm_${N}_${NOISE}
-    	$CFL2PNG $CFLCOMMON $out/r_mm_${N}_${NOISE}{,.png}
+	bart nlinv -i$N -d$DEBUG $NLINV_OPTS $out/noisy_${N}_${NOISE} $out/r_mm_${N}_${NOISE} > $out/log_r_mm_${N}_${NOISE}
+    	cfl2png $CFLCOMMON $out/r_mm_${N}_${NOISE}{,.png}
 
 	rm $out/tmp_${N}_${NOISE}.{cfl,hdr}
 	rm $out/noisy_${N}_${NOISE}.{cfl,hdr}

@@ -1,7 +1,12 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -euo pipefail
 
-source ../../BART.sh
+if [ ! -e $TOOLBOX_PATH/bart ] ; then
+	echo "\$TOOLBOX_PATH is not set correctly!" >&2
+	exit 1
+fi
+export PATH=$TOOLBOX_PATH:$PATH
+
 
 if false;
 then
@@ -11,16 +16,16 @@ then
 	cd ..
 	
 	#extract single slice
-	$BART fft -u -i 1 data/kspace data/tmp_fft
-	$BART slice 0 160 data/tmp_fft data/single_slice
+	bart fft -u -i 1 data/kspace data/tmp_fft
+	bart slice 0 160 data/tmp_fft data/single_slice
 fi
 
-$BART rss 8 data/single_slice data/tmp_rss
-$BART threshold -H 21 data/tmp_rss data/tmp_pat
-$BART pattern data/tmp_pat data/pat
-$BART fmac data/pat data/single_slice data/tmp_full
+bart rss 8 data/single_slice data/tmp_rss
+bart threshold -H 21 data/tmp_rss data/tmp_pat
+bart pattern data/tmp_pat data/pat
+bart fmac data/pat data/single_slice data/tmp_full
 #scale maximum to about 1
-$BART scale 1e-8 data/tmp_full data/full
+bart scale 1e-8 data/tmp_full data/full
 
 
 rm data/tmp_*

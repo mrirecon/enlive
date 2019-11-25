@@ -1,8 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -euo pipefail
 
 source ../../FONT.sh
-source opts.sh
 #first argument is both dir name and output name
 DIR="$1"
 cd ${DIR}

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -euo pipefail
 
 LOG=timelog.log
@@ -7,7 +7,13 @@ echo "Start: $(date --iso-8601=seconds)" | tee $LOG
 #prepare software
 git submodule update --init
 ./build_software.sh
+
 echo "preparation and building software: ${SECONDS}s" | tee -a $LOG
+
+FOLDER=$(dirname $(readlink -f $BASH_SOURCE))
+export TOOLBOX_PATH=${FOLDER}/software/bart
+VIEWPATH=${FOLDER}/software/view
+export PATH=$VIEWPATH:$PATH
 
 # smallfov:
 ref=$SECONDS
@@ -17,7 +23,6 @@ ref=$SECONDS
 	./doit.sh
 )
 echo "smallfov: $(( SECONDS - ref ))s" | tee -a $LOG
-
 
 # Newton-Noise
 ref=$SECONDS
