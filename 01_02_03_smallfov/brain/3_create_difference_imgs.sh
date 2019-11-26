@@ -9,7 +9,7 @@ export PATH=$TOOLBOX_PATH:$PATH
 
 source opts.sh
 
-out="$1"
+out=reco_ENLIVE
 
 # brace expand
 set -B

@@ -5,7 +5,7 @@ source ../../FONT.sh
 #first argument is both dir name and output name
 
 source opts.sh
-DIR="$1"
+DIR=reco_ENLIVE
 VCC=${DIR}/vcc/vcc_${DIR}.png
 PFVCC=${DIR}/pf_vcc/pf_vcc_${DIR}.png
 

@@ -5,7 +5,7 @@ source ../../FONT.sh
 source opts.sh
 
 #first argument is both dir name and output name
-DIR="$1"
+DIR=reco
 cd ${DIR}
 
 Y=$(identify -format "%[fx:h]" ./r_mm_1.png)

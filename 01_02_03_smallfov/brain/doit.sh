@@ -4,15 +4,14 @@ set -euo pipefail
 ./0_prep.sh
 
 # ENLIVE reco first:
-# first param is output directory
-./1_reco_enlive.sh reco_ENLIVE
+./1_reco_enlive.sh
 
 # then ESPIRiT
-./2_reco_espirit.sh reco_ESPIRiT
+./2_reco_espirit.sh
 
 
 # difference images
-./3_create_difference_imgs.sh reco_ENLIVE
+./3_create_difference_imgs.sh
 # and individual figures
 ./4_create_figure.sh reco_ENLIVE
 ./4_create_figure.sh reco_ESPIRiT

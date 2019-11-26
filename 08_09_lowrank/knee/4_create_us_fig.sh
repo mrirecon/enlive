@@ -15,7 +15,7 @@ DENSITY=$( echo 'scale=5; 72/192*'$Y | bc)
 FONTSIZE=$( echo 'scale=0; 192/6' | bc)
 SPACING=$( echo 'scale=0; '${Y}'/48' | bc)
 
-TMP=tmp
+TMP=tmp_${US}
 mkdir ${TMP} || true
 cd $TMP
 

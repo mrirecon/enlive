@@ -3,7 +3,7 @@ set -euo pipefail
 
 source ../../FONT.sh
 #first argument is both dir name and output name
-DIR="$1"
+DIR=reco_ENLIVE
 source opts.sh
 
 # loop over subdirs and generate output name

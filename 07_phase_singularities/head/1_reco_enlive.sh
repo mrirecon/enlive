@@ -8,8 +8,8 @@ fi
 export PATH=$TOOLBOX_PATH:$PATH
 
 source opts.sh
-out=$1
-[ -d $1 ] || mkdir $out
+out=reco
+[ -d $out ] || mkdir $out
 
 #resized dataset for square pixels
 
@@ -17,6 +17,10 @@ DEBUG=4
 MAPS=2
 # brace expand
 set -B
+
+#pattern: 2x undersampling, 24 ref lines
+bart fmac data/full data/pat data/unders
+
 bart nlinv -d$DEBUG -m$MAPS -U $NLINV_OPTS $DATA $out/r_mmu > $out/log_r_mmu
 cfl2png $CFLCOMMON $out/r_mmu $out/r_mmu
 

@@ -9,8 +9,10 @@ fi
 export PATH=$TOOLBOX_PATH:$PATH
 
 source opts.sh
-out=reco_ENLIVE
+out=reco_SAKE
 mkdir -p $out
+
+GET_DATA
 
 for USind in "${!VALS[@]}";
 do
@@ -27,14 +29,11 @@ do
 
 	US=$(GET_US $USval)
 
-	DEBUG=4
-	MAPS=2
-
-	# regular
-	{ $TASKSET time bart nlinv -d$DEBUG -m$MAPS -U $NLINV_OPTS ${DATA}_${US} $out/r_mmu_${US}; } \
-		>$out/log_r_mmu_${US} 2>$out/timelog_r_mmu_${US}
-
-	bart nlinv -d$DEBUG -m$MAPS $NLINV_OPTS ${DATA}_${US} $out/r_mm_${US} >$out/log_r_mm_${US}
-
-	bart nlinv -d$DEBUG -m1 $NLINV_OPTS ${DATA}_${US} $out/{r,s}_sm_${US} >$out/log_r_sm_${US}
+	{ $TASKSET time bart sake -i${SAKE_ITER} -s0.125 ${DATA}_${US} $out/tmp_sake_ksp_${US}; } \
+		> $out/log_sake_${US}.log 2> $out/timelog_sake_${US}.log
+	bart fft -u -i 7 $out/tmp_sake_ksp_${US} $out/tmp_sake_${US}
+	bart rss 8 $out/tmp_sake_${US} $out/r_sake_${US}
+	rm $out/tmp_sake{,_ksp}_${US}*
 done
+
+

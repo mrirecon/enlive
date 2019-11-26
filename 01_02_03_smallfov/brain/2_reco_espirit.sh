@@ -9,8 +9,8 @@ export PATH=$TOOLBOX_PATH:$PATH
 
 source opts.sh
 
-out=$1
-[ -d $1 ] || mkdir $out
+out=reco_ESPIRiT
+[ -d $out ] || mkdir $out
 
 bart ecalib -m1 $DATA sens_m1 > /dev/null
 { time taskset -c 0 bart ecalib  -m$MAPS $DATA sens_m2; } >$out/log_r_mmu_2 2>$out/timelog_r_mmu_2

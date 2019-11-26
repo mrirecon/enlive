@@ -11,8 +11,8 @@ source opts.sh
 
 set -euo pipefail
 
-out=$1
-[ -d $1 ] || mkdir $out
+out=reco_ENLIVE
+[ -d $out ] || mkdir $out
 
 DEBUG=4
 

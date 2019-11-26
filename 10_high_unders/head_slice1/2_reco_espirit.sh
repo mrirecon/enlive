@@ -10,17 +10,22 @@ fi
 export PATH=$TOOLBOX_PATH:$PATH
 
 source opts.sh
-out=$1
-US=$2
+out=reco_ESPIRiT
 
-DEBUG=4
-MAPS=2
+for US in "${USs[@]}"
+do
 
-bart ecalib -m1 ${DATA}_${US} sens_m1_${US} > /dev/null
+	# apply undersampling
+	bart fmac data/slice-full data/pat_$US ${DATA}_$US
+
+	DEBUG=4
+	MAPS=2
+
+	bart ecalib -m1 ${DATA}_${US} sens_m1_${US} > /dev/null
 
 
-bart pics -d$DEBUG -S -r0.001 ${DATA}_${US} sens_m1_${US} $out/r_mm_${US} >$out/log_r_mm_${US}
-bart rss 1024 $out/r_mm_{,abs_}${US}
-cfl2png $CFLCOMMON $out/r_mm_abs_${US} $out/r_mm_${US}.png
+	bart pics -d$DEBUG -S -r0.001 ${DATA}_${US} sens_m1_${US} $out/r_mm_${US} >$out/log_r_mm_${US}
+	bart rss 1024 $out/r_mm_{,abs_}${US}
 
-rm sens_m1_${US}.{cfl,hdr}
+	rm sens_m1_${US}.{cfl,hdr}
+done

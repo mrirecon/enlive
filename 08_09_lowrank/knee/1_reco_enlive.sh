@@ -12,6 +12,8 @@ source opts.sh
 out=reco_ENLIVE
 mkdir -p $out
 
+GET_DATA
+
 for USind in "${!VALS[@]}";
 do
 	USval=${VALS[$USind]}

@@ -12,8 +12,8 @@ export PATH=$TOOLBOX_PATH:$PATH
 
 source opts.sh
 
-export out=$1
-[ -d $1 ] || mkdir $out
+export out=reco_ENLIVE
+[ -d $out ] || mkdir $out
 
 export SHELL=$(type -p bash)
 
