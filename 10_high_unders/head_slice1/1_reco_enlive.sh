@@ -11,6 +11,7 @@ export PATH=$TOOLBOX_PATH:$PATH
 
 source opts.sh
 out=reco_ENLIVE
+mkdir -p $out
 
 for US in "${USs[@]}"
 do

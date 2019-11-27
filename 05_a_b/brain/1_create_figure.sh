@@ -4,7 +4,19 @@ set -euo pipefail
 source ../../FONT.sh
 source opts.sh
 #first argument is both dir name and output name
-DIR=reco_ENLIVE
+export DIR=reco_ENLIVE
+
+export SHELL=$(type -p bash)
+create_png()
+{
+	A=$1
+	B=$2
+	cfl2png $CFLCOMMON $DIR/r_mm_${A}_${B}{,.png}
+}
+export -f create_png
+
+parallel create_png {} ::: "${As[@]}" ::: "${Bs[@]}"
+
 cd ${DIR}
 
 Y=$(identify -format "%[fx:h]" ./r_mm_220_32.png)

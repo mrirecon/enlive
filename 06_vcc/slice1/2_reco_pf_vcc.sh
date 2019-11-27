@@ -27,11 +27,6 @@ MAPS=2
 # generate VCC PSF
 bart nlinv -d$DEBUG -m$MAPS $NLINV_OPTS -U -P -p$PSF_PF_VCC $PF_VCC $out/r_mmu >$out/log_r_mmu.log
 
-cfl2png $CFLCOMMON $out/r_mmu $out/r_mmu.png
-
 bart nlinv -d$DEBUG -m$MAPS $NLINV_OPTS -P -p$PSF_PF_VCC $PF_VCC $out/r_mm >$out/log_r_mm.log
-cfl2png $CFLCOMMON $out/r_mm $out/r_mm.png
 
 bart nlinv -d$DEBUG -m1 $NLINV_OPTS -P -p$PSF_PF_VCC $PF_VCC $out/r_sm >$out/log_r_sm.log
-
-cfl2png $CFLCOMMON $out/r_sm $out/r_sm.png

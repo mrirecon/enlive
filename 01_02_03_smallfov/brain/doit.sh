@@ -9,22 +9,23 @@ set -euo pipefail
 # then ESPIRiT
 ./2_reco_espirit.sh
 
+./3_create_pngs.sh
 
 # difference images
-./3_create_difference_imgs.sh
+./4_create_difference_imgs.sh
 # and individual figures
-./4_create_figure.sh reco_ENLIVE
-./4_create_figure.sh reco_ESPIRiT
+./5_create_figure.sh reco_ENLIVE
+./5_create_figure.sh reco_ESPIRiT
 
 
 # comparison figure
-./5_create_comparison_fig.sh reco_ENLIVE reco_ESPIRiT
+./6_create_comparison_fig.sh reco_ENLIVE reco_ESPIRiT
 
 # maps comparison fig
-./6_create_maps_figure.sh reco_ENLIVE
+./7_create_maps_figure.sh reco_ENLIVE
 
 # sensitivity figure
-./7_create_sens_figure.sh reco_ENLIVE
+./8_create_sens_figure.sh reco_ENLIVE
 
 # copy figure to output
 cp ENLIVEvESPIRiT.png ../../output/01_fig_ENLIVEvESPIRiT.png

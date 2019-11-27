@@ -31,7 +31,6 @@ reco()
 	B=$2
 
 	bart nlinv -a$A -b$B -d$DEBUG $NLINV_OPTS data/unders $out/r_mm_${A}_${B} > $out/log_r_mm_${A}_${B}
-    	cfl2png $CFLCOMMON $out/r_mm_${A}_${B}{,.png}
 }
 export -f reco
 

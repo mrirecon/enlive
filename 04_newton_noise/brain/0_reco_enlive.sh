@@ -39,7 +39,6 @@ reco()
 	bart fmac $out/tmp_${N}_${NOISE} data/pat $out/noisy_${N}_${NOISE}
 	
 	bart nlinv -i$N -d$DEBUG $NLINV_OPTS $out/noisy_${N}_${NOISE} $out/r_mm_${N}_${NOISE} > $out/log_r_mm_${N}_${NOISE}
-    	cfl2png $CFLCOMMON $out/r_mm_${N}_${NOISE}{,.png}
 
 	rm $out/tmp_${N}_${NOISE}.{cfl,hdr}
 	rm $out/noisy_${N}_${NOISE}.{cfl,hdr}

@@ -1,12 +1,18 @@
 #!/bin/bash
 set -euo pipefail
+set -B
 
 source ../../FONT.sh
 source opts.sh
-#first argument is both dir name and output name
-DIR=reco
-cd ${DIR}
 
+DIR=reco
+
+cfl2png $CFLCOMMON $DIR/r_mmu{,.png}
+cfl2png $CFLCOMMON $DIR/r_mm{,.png}
+cfl2png $CFLCOMMON $DIR/r_sm{,.png}
+cfl2png -C Y $CFLCOMMON $DIR/r_sm $DIR/r_sm_phase.png
+
+cd ${DIR}
 Y=$(identify -format "%[fx:h]" ./r_sm.png)
 #set density. 72 means 1pt is 1 pxl
 DENSITY=$( echo 'scale=5; 72/192*'$Y | bc)

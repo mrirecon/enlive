@@ -6,8 +6,16 @@ source ../../FONT.sh
 DIR=reco_ENLIVE
 source opts.sh
 
-# loop over subdirs and generate output name
+cfl2png $CFLCOMMON reco_ENLIVE/vcc/r_mmu{,.png}
+cfl2png $CFLCOMMON reco_ENLIVE/vcc/r_mm{,.png}
+cfl2png $CFLCOMMON reco_ENLIVE/vcc/r_sm{,.png}
 
+cfl2png $CFLCOMMON reco_ENLIVE/pf_vcc/r_mmu{,.png}
+cfl2png $CFLCOMMON reco_ENLIVE/pf_vcc/r_mm{,.png}
+cfl2png $CFLCOMMON reco_ENLIVE/pf_vcc/r_sm{,.png}
+
+
+# loop over subdirs and generate output name
 cd ${DIR}
 for sd in $(find . -mindepth 1 -maxdepth 1 -type d)
 do

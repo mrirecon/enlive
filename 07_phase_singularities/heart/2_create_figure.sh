@@ -1,11 +1,25 @@
 #!/bin/bash
 set -euo pipefail
+set -B
 
 source ../../FONT.sh
 source opts.sh
 
 #first argument is both dir name and output name
 DIR=reco
+
+for ((m=1; m<=$COMP_MAPS; m++))
+do
+    cfl2png $CFLCOMMON $DIR/tmp_rss_${m} $DIR/r_mm_${m}.png
+    cfl2png -C Y $CFLCOMMON $DIR/r_mm_${m} $DIR/r_mm_${m}_phase.png
+
+    if [ "$m" -eq "$COMP_MAPS" ]
+    then
+	cfl2png $CFLCOMMON $DIR/tmp_rssu_${m} $DIR/r_mmu_${m}.png
+    fi
+    rm $DIR/tmp*_${m}.{cfl,hdr}
+done
+
 cd ${DIR}
 
 Y=$(identify -format "%[fx:h]" ./r_mm_1.png)
