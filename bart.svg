@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -9,95 +7,79 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="104.29571mm"
-   height="60.288383mm"
-   id="svg2"
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 96.02 57.01"
    version="1.1"
-   inkscape:version="0.92.1 r15371"
-   sodipodi:docname="logo.svg">
-  <defs
-     id="defs4" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="-519.71704"
-     inkscape:cy="703.1019"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     inkscape:window-width="1310"
-     inkscape:window-height="940"
-     inkscape:window-x="80"
-     inkscape:window-y="87"
-     inkscape:window-maximized="0"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0" />
+   sodipodi:docname="BART-logo2.svg"
+   inkscape:version="0.92.1 r15371">
   <metadata
-     id="metadata7">
+     id="metadata17">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title>BART</dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1020"
+     id="namedview15"
+     showgrid="false"
+     inkscape:zoom="4.1396247"
+     inkscape:cx="48.009998"
+     inkscape:cy="28.504999"
+     inkscape:window-x="0"
+     inkscape:window-y="31"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">.cls-1{font-size:48.72px;font-family:Bebas Neue;}.cls-2{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:5px;}</style>
+  </defs>
+  <title
+     id="title6">BART</title>
   <g
-     inkscape:label="Ebene 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-71.404325,-281.29204)">
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:bold;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       x="141.09563"
-       y="368.21625"
-       id="text2985"
-       transform="scale(0.79961524,1.2506015)"><tspan
-         sodipodi:role="line"
-         id="tspan2987"
-         x="141.09563"
-         y="368.21625"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:147.93824768px;line-height:1.25;font-family:FreeSans;-inkscape-font-specification:'FreeSans Semi-Bold'">BART</tspan></text>
-    <rect
-       y="487.78659"
-       x="385.76852"
-       height="20.059948"
-       width="78.517189"
-       id="rect3759"
-       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2.61420894;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
-       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2.80175877;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect3761"
-       width="90.187347"
-       height="20.059948"
-       x="416.20065"
-       y="-463.45853"
-       transform="rotate(90)" />
-    <rect
-       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2.61420894;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect3775"
-       width="78.517189"
-       height="20.059948"
-       x="287.98651"
-       y="-92.771378"
-       transform="rotate(90)" />
-    <rect
-       transform="scale(-1)"
-       y="-302.75287"
-       x="-164.23651"
-       height="20.059948"
-       width="90.187347"
-       id="rect3777"
-       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2.80175877;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+     aria-label="BART"
+     transform="translate(9.98 45.87)"
+     style="font-size:48.72000122px;font-family:'Bebas Neue'"
+     id="text8">
+    <path
+       d="M 10.03632,-34.104001 H 1.9488 V 0 h 8.42856 c 5.3592,0 8.13624,-2.8257601 8.13624,-8.0875202 V -10.86456 c 0,-3.60528 -1.12056,-6.13872 -3.99504,-7.25928 v -0.09744 c 2.38728,-1.12056 3.45912,-3.312961 3.45912,-6.820801 v -1.218 c 0,-5.26176 -2.38728,-7.84392 -7.94136,-7.84392 z M 9.6952802,-15.3468 c 2.4359998,0 3.4591198,0.9744 3.4591198,4.1412 v 2.9719198 c 0,2.5334401 -0.9744,3.3616801 -2.77704,3.3616801 H 7.3080002 V -15.3468 Z m 0.19488,-13.885201 c 1.9000798,0 2.7283198,1.07184 2.7283198,3.50784 v 1.90008 c 0,2.72832 -1.218,3.60528 -3.2155198,3.60528 h -2.09496 v -9.0132 z"
+       style="font-size:48.72000122px;font-family:'Bebas Neue'"
+       id="path4495" />
+    <path
+       d="M 33.62898,-34.104001 H 25.78506 L 20.32842,0 h 4.92072 l 0.92568,-6.1874402 h 6.5772 L 33.6777,0 h 5.40792 z m -4.23864,6.04128 h 0.09744 l 2.53344,17.246881 H 26.8569 Z"
+       style="font-size:48.72000122px;font-family:'Bebas Neue'"
+       id="path4497" />
+    <path
+       d="M 58.19604,0 C 57.66012,-1.26672 57.6114,-2.4847201 57.6114,-4.1412001 v -5.2617601 c 0,-3.5565598 -0.87696,-6.0899998 -3.556561,-7.2105598 v -0.09744 c 2.387281,-1.12056 3.507841,-3.361681 3.507841,-6.869521 v -2.6796 c 0,-5.26176 -2.387281,-7.84392 -7.941361,-7.84392 h -8.08752 V 0 h 5.3592 v -13.8852 h 1.85136 c 2.436,0 3.50784,1.16928 3.50784,4.3360798 v 5.3592001 c 0,2.7770401 0.19488,3.31296008 0.4872,4.1899201 z m -8.720881,-29.232001 c 1.90008,0 2.72832,1.07184 2.72832,3.50784 v 3.36168 c 0,2.728321 -1.218,3.605281 -3.21552,3.605281 h -2.09496 v -10.474801 z"
+       style="font-size:48.72000122px;font-family:'Bebas Neue'"
+       id="path4499" />
+    <path
+       d="m 59.576947,-29.232001 h 5.6028 V 0 h 5.3592 v -29.232001 h 5.602801 v -4.872 H 59.576947 Z"
+       style="font-size:48.72000122px;font-family:'Bebas Neue'"
+       id="path4501" />
   </g>
+  <polyline
+     class="cls-2"
+     points="4.56 22.72 4.56 4 20.7 4"
+     id="polyline10" />
+  <polyline
+     class="cls-2"
+     points="91.22 33.84 91.22 52.55 75.08 52.55"
+     id="polyline12" />
 </svg>
