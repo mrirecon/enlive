@@ -28,7 +28,6 @@ VALS=(  #value  corresponding US factor
 PREP ()
 {
 	US=$1
-	source opts.sh
 
 	if [ -f data/undersampling_factor_${US}.txt ];
 	then

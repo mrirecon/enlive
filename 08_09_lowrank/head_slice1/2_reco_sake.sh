@@ -27,8 +27,17 @@ do
 
 	US=$(GET_US $USval)
 
+	set +e
 	{ $TASKSET time bart sake -i${SAKE_ITER} -s0.05 ${DATA}_${US} $out/tmp_sake_ksp_${US}; } \
 		> $out/log_sake_${US}.log 2> $out/timelog_sake_${US}.log
+	ES=$?
+	if [ "$ES" -ne 0 ]; then
+		echo "Error running Sake!" >&2
+		cat $out/timelog_sake_${US}.log >&2
+		exit "$ES"
+	fi
+	set -e
+
 	bart fft -u -i 7 $out/tmp_sake_ksp_${US} $out/tmp_sake_${US}
 	bart rss 8 $out/tmp_sake_${US} $out/r_sake_${US}
 	rm $out/tmp_sake{,_ksp}_${US}*
