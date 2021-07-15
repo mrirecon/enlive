@@ -74,7 +74,8 @@ rm data/tmp*.{cfl,hdr}
 DEBUG=4
 
 #resize to: 
-CROP=$(echo "scale=0;"$NSMPL"/2*1.1" | bc -l)
+CROPf=$(echo "scale=0;"$NSMPL"/2*1.1" | bc -l)
+CROP=$(printf "%.0f" $CROPf)
 for ((m=1; m<=$COMP_MAPS; m++))
 do
     bart nlinv $NONCART_FLAG -d$DEBUG -m$m $NLINV_OPTS $DATA $out/tmp_${m} >$out/log_r_mm_${m} 2>&1

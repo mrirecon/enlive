@@ -46,8 +46,13 @@ PREP ()
 	#calculate undersampling
 	bart fmac -s 65535 data/s_${US} data/s_${US} data/ns_${US}
 	bart fmac -s 65535 data/pat_${US} data/pat_${US} data/npat_${US}
-	ALL=$(bart show -f "%+f%+fi" data/ns_${US} | cut -f1 -d"." | cut -f2 -d"+")
-	PAT=$(bart show -f "%+f%+fi" data/npat_${US} | cut -f1 -d"." | cut -f2 -d"+")
+	if bart version -t v0.6.00 >/dev/null 2>&1 ; then
+		ALL=$(bart show -f "%+.1f%+.1fi" data/ns_${US} | cut -f1 -d"." | cut -f2 -d"+")
+		PAT=$(bart show -f "%+.1f%+.1fi" data/npat_${US} | cut -f1 -d"." | cut -f2 -d"+")
+	else
+		ALL=$(bart show -f "%+f%+fi" data/ns_${US} | cut -f1 -d"." | cut -f2 -d"+")
+		PAT=$(bart show -f "%+f%+fi" data/npat_${US} | cut -f1 -d"." | cut -f2 -d"+")
+	fi
 	rm data/ns_${US}.* data/npat_${US}.* data/s_${US}.*
 
 	UNDERS=$(echo "scale=1;"$ALL"/"$PAT | bc -l)
