@@ -11,5 +11,6 @@ cd ..
 
 git clone https://github.com/mrirecon/view/
 cd view
+git checkout e947c07f0d8714e8acc4c56d0e52536b1b836ead
 PARALLEL=1 TOOLBOX_PATH=../bart  make cfl2png
 
