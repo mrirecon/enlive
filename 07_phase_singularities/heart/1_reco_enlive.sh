@@ -8,6 +8,7 @@ if [ ! -e $TOOLBOX_PATH/bart ] ; then
 	exit 1
 fi
 export PATH=$TOOLBOX_PATH:$PATH
+export BART_COMPAT_VERSION="v0.4.04"
 
 NONCART_FLAG=""
 if bart version -t v0.6.00 >/dev/null 2>&1 ; then
@@ -46,7 +47,7 @@ bart traj -x$NSMPL -y$NSSPK -t$NTURN -D data/tmp
 bart reshape 1028 $NSPK 1 data/tmp data/traj_uncorr
 
 # gradient delays
-GD=$(bart estdelay data/traj_uncorr data/unders)
+GD=$(DEBUG_LEVEL=0 bart estdelay data/traj_uncorr data/unders)
 
 bart traj -x$NSMPL -y$NSSPK -t$NTURN -D -q${GD} data/tmp
 bart circshift 10 3 data/tmp{,2}

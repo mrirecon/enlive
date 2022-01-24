@@ -8,6 +8,7 @@ if [ ! -e $TOOLBOX_PATH/bart ] ; then
 	exit 1
 fi
 export PATH=$TOOLBOX_PATH:$PATH
+export BART_COMPAT_VERSION="v0.4.04"
 
 source opts.sh
 out=reco_ESPIRiT
