@@ -1,0 +1,10 @@
+./01_02_03_smallfov/brain/run_fig.sh
+./04_newton_noise/brain/run_fig.sh
+./05_a_b/brain/run_fig.sh
+./06_vcc/slice1/run_fig.sh
+./07_phase_singularities/head/run_fig.sh
+./07_phase_singularities/heart/run_fig.sh
+./07_phase_singularities/phantom/run_fig.sh
+./08_09_lowrank/head_slice1/run_fig.sh
+./08_09_lowrank/knee/run_fig.sh
+./10_high_unders/head_slice1/run_fig.sh

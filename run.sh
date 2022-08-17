@@ -20,7 +20,8 @@ ref=$SECONDS
 (
 	cd 01_02_03_smallfov
 	cd brain
-	./doit.sh
+	./run.sh
+	./run_fig.sh
 )
 echo "smallfov: $(( SECONDS - ref ))s" | tee -a $LOG
 
@@ -29,7 +30,8 @@ ref=$SECONDS
 (
 	cd 04_newton_noise
 	cd brain
-	./doit.sh
+	./run.sh
+	./run_fig.sh
 )
 echo "newton-noise: $(( SECONDS - ref ))s" | tee -a $LOG
 
@@ -39,7 +41,8 @@ ref=$SECONDS
 (
 	cd 05_a_b
 	cd brain
-	./doit.sh
+	./run.sh
+	./run_fig.sh
 )
 echo "a-b: $(( SECONDS - ref ))s" | tee -a $LOG
 
@@ -49,7 +52,8 @@ ref=$SECONDS
 (
 	cd 06_vcc
 	cd slice1
-	./doit.sh
+	./run.sh
+	./run_fig.sh
 )
 echo "virtual-conjugate coils: $(( SECONDS - ref ))s" | tee -a $LOG
 
@@ -59,11 +63,14 @@ ref=$SECONDS
 (
 	cd 07_phase_singularities
 	cd phantom
-	./doit.sh
+	./run.sh
+	./run_fig.sh
 	cd ../head
-	./doit.sh
+	./run.sh
+	./run_fig.sh
 	cd ../heart
-	./doit.sh
+	./run.sh
+	./run_fig.sh
 	cd ..
 	./create_Phantom_Head_Heart.sh
 )
@@ -74,10 +81,12 @@ ref=$SECONDS
 (
 	cd 08_09_lowrank
 	cd head_slice1
-	./doit.sh
+	./run.sh
+	./run_fig.sh
 	cd ..
 	cd knee
-	./doit.sh
+	./run.sh
+	./run_fig.sh
 )
 echo "low-rank: $(( SECONDS - ref ))s" | tee -a $LOG
 
@@ -86,7 +95,8 @@ ref=$SECONDS
 (
 	cd 10_high_unders
 	cd head_slice1
-	./doit.sh
+	./run.sh
+	./run_fig.sh
 )
 echo "high undersampling: $(( SECONDS - ref ))s" | tee -a $LOG
 

@@ -1,0 +1,12 @@
+reco_ENLIVE/r_mm_2	0.005		CFL_NRMSE
+reco_ENLIVE/r_mmu_2	0.005		CFL_NRMSE
+reco_ENLIVE/r_mm_3	0.005		CFL_NRMSE
+reco_ENLIVE/r_mmu_3	0.005		CFL_NRMSE
+reco_ENLIVE/r_mm_4	0.005		CFL_NRMSE
+reco_ENLIVE/r_mmu_4	0.005		CFL_NRMSE
+reco_ESPIRiT/r_mm_2	0.005		CFL_NRMSE
+reco_ESPIRiT/r_mm_abs_2	0.005		CFL_NRMSE
+reco_ESPIRiT/r_mm_3	0.005		CFL_NRMSE
+reco_ESPIRiT/r_mm_abs_3	0.005		CFL_NRMSE
+reco_ESPIRiT/r_mm_4	0.005		CFL_NRMSE
+reco_ESPIRiT/r_mm_abs_4	0.005		CFL_NRMSE
