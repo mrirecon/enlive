@@ -14,7 +14,7 @@ To generate the figures, the `cfl2png` command of
 Finally, the resulting .png's are arranged using
 `imagemagick` (tested with ImageMagick 6.9.7-4).
 
-There is a top-level `bash`-script called `doit.sh` which should automatically generate all figures and place them in the output directory. The necessary versions of `bart` and `view` are downloaded and compiled automatically.
+There is a top-level `bash`-script called `run.sh` which should automatically generate all figures and place them in the output directory. The necessary versions of `bart` and `view` are downloaded and compiled automatically.
 
 Please note that total runtime of all scripts is likely to exceed 12 hours. However, more than 95% of that time  is spent on the SAKE reconstructions for Figures 8 and 9.
 
