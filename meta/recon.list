@@ -5,6 +5,6 @@
 ./07_phase_singularities/head/run.sh
 ./07_phase_singularities/heart/run.sh
 ./07_phase_singularities/phantom/run.sh
-./08_09_lowrank/head_slice1/run.sh
-./08_09_lowrank/knee/run.sh
+./08_09_lowrank/head_slice1/run.sh	::very-long::
+./08_09_lowrank/knee/run.sh		::very-long::
 ./10_high_unders/head_slice1/run.sh
