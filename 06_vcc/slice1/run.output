@@ -1,6 +1,6 @@
-reco_ENLIVE/vcc/r_sm		0.0005		CFL_NRMSE
-reco_ENLIVE/vcc/r_mm		0.0005		CFL_NRMSE
-reco_ENLIVE/vcc/r_mmu		0.0005		CFL_NRMSE
-reco_ENLIVE/pf_vcc/r_sm		0.0005		CFL_NRMSE
-reco_ENLIVE/pf_vcc/r_mm		0.0005		CFL_NRMSE
-reco_ENLIVE/pf_vcc/r_mmu	0.0005		CFL_NRMSE
+reco_ENLIVE/vcc/r_sm		0.00001		CFL_NRMSE
+reco_ENLIVE/vcc/r_mm		0.0001		CFL_NRMSE
+reco_ENLIVE/vcc/r_mmu		0.0001		CFL_NRMSE
+reco_ENLIVE/pf_vcc/r_sm		0.00001		CFL_NRMSE
+reco_ENLIVE/pf_vcc/r_mm		0.0001		CFL_NRMSE
+reco_ENLIVE/pf_vcc/r_mmu	0.0001		CFL_NRMSE

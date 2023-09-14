@@ -1,19 +1,19 @@
 # output			tolerance		test type
-data/ref			1e-6  		CFL_NRMSE
+data/ref			1e-7  		CFL_NRMSE
 
-reco_ENLIVE/r_mm_1		0.005 		CFL_NRMSE
-reco_ENLIVE/r_mm_2		0.005 		CFL_NRMSE
+reco_ENLIVE/r_mm_1		0.001 		CFL_NRMSE
+reco_ENLIVE/r_mm_2		0.001 		CFL_NRMSE
 reco_ENLIVE/r_mm_3		0.045 		CFL_NRMSE
-reco_ENLIVE/r_mm_4		0.045 		CFL_NRMSE
+reco_ENLIVE/r_mm_4		0.005 		CFL_NRMSE
 
-reco_ENLIVE/r_mmu_1		0.002 		CFL_NRMSE
+reco_ENLIVE/r_mmu_1		0.001 		CFL_NRMSE
 reco_ENLIVE/r_mmu_2		0.002 		CFL_NRMSE
 # r_mmu_3 is not reproducble well, unfortunatly
-reco_ENLIVE/r_mmu_3		0.50  		CFL_NRMSE
-reco_ENLIVE/r_mmu_4		0.04  		CFL_NRMSE
+reco_ENLIVE/r_mmu_3		0.25  		CFL_NRMSE
+reco_ENLIVE/r_mmu_4		0.02  		CFL_NRMSE
 
-reco_ENLIVE/s_mmu_4		0.04  		CFL_NRMSE
+reco_ENLIVE/s_mmu_4		0.03  		CFL_NRMSE
 
-reco_ESPIRiT/r_mm_1		0.0004 		CFL_NRMSE
-reco_ESPIRiT/r_mm_2		0.0004 		CFL_NRMSE
-reco_ESPIRiT/r_mmu_2		0.0004 		CFL_NRMSE
+reco_ESPIRiT/r_mm_1		0.0001 		CFL_NRMSE
+reco_ESPIRiT/r_mm_2		0.0001 		CFL_NRMSE
+reco_ESPIRiT/r_mmu_2		0.0001 		CFL_NRMSE
